@@ -1,0 +1,301 @@
+id,filiere,sexe,logement,assiduite,moyenne_bac,heures_etude,heures_sommeil,note_stat,reussite
+1,Biologie,H,Cité universitaire,Forte,12.85,7.1,5.8,8.2,Ajourné
+2,Chimie,F,Location,Moyenne,14.31,5.0,7.5,8.27,Ajourné
+3,Chimie,F,Cité universitaire,Forte,13.52,3.3,6.4,9.6,Ajourné
+4,Chimie,F,Famille,Faible,15.36,6.5,6.3,10.38,Admis
+5,Chimie,F,Location,Moyenne,10.51,12.7,6.4,9.41,Ajourné
+6,Informatique,F,Cité universitaire,Moyenne,11.73,11.9,4.8,12.9,Admis
+7,Informatique,H,Location,Moyenne,11.12,9.5,5.1,10.16,Admis
+8,Biologie,F,Famille,Moyenne,14.0,9.8,6.7,9.62,Ajourné
+9,Chimie,F,Cité universitaire,Forte,10.64,6.3,5.8,8.28,Ajourné
+10,Biologie,F,Cité universitaire,Forte,16.4,4.7,,8.87,Ajourné
+11,Informatique,F,Location,Forte,13.13,9.8,8.1,13.22,Admis
+12,Informatique,H,Famille,Forte,14.71,10.3,5.3,12.98,Admis
+13,Chimie,F,Location,Faible,11.65,8.3,5.4,9.47,Ajourné
+14,Informatique,H,Cité universitaire,Forte,13.27,16.9,6.7,16.77,Admis
+15,Chimie,H,Location,Forte,13.87,17.4,8.8,15.28,Admis
+16,Informatique,F,Cité universitaire,Moyenne,12.01,7.2,6.1,8.23,Ajourné
+17,Chimie,F,Cité universitaire,Forte,12.68,10.4,7.4,11.59,Admis
+18,Biologie,F,Location,Faible,15.18,95.0,5.2,11.29,Admis
+19,Biologie,F,Famille,Moyenne,14.77,21.0,6.0,17.4,Admis
+20,Biologie,F,Famille,Moyenne,13.81,10.8,7.4,13.39,Admis
+21,Chimie,H,Location,Moyenne,15.76,15.4,6.6,17.06,Admis
+22,Chimie,H,Location,Faible,10.28,10.1,7.4,11.85,Admis
+23,Chimie,F,Location,Forte,13.41,2.5,7.0,7.59,Ajourné
+24,Biologie,H,Famille,Forte,12.47,12.5,6.9,13.5,Admis
+25,Chimie,F,Location,Moyenne,14.99,5.6,6.8,7.9,Ajourné
+26,Chimie,H,Location,Forte,14.55,7.5,8.3,9.47,Ajourné
+27,Biologie,F,Famille,Moyenne,14.64,11.0,6.8,15.33,Admis
+28,Chimie,F,Location,Faible,12.16,13.5,7.7,11.03,Admis
+29,Chimie,H,Location,Moyenne,13.79,9.3,6.6,14.15,Admis
+30,Biologie,H,Famille,Faible,14.51,6.2,7.0,7.93,Ajourné
+31,Biologie,F,Famille,Moyenne,14.82,6.5,5.8,10.63,Admis
+32,Informatique,H,Cité universitaire,Forte,11.7,14.6,4.8,14.87,Admis
+33,Informatique,F,Location,Faible,12.04,10.2,6.4,11.08,Admis
+34,Chimie,H,Cité universitaire,Faible,13.34,9.6,7.0,9.89,Ajourné
+35,Chimie,H,Location,Faible,14.95,5.8,6.4,8.98,Ajourné
+36,Informatique,F,Location,Faible,13.87,9.6,7.4,13.37,Admis
+37,Chimie,H,Location,Faible,14.93,6.2,6.1,9.38,Ajourné
+38,Chimie,F,Location,Forte,10.27,10.8,5.5,11.85,Admis
+39,Informatique,H,Famille,Moyenne,12.62,9.2,5.4,16.97,Admis
+40,Biologie,H,Famille,Forte,13.7,7.8,7.5,12.64,Admis
+41,Informatique,H,Location,Faible,13.38,8.8,6.0,13.06,Admis
+42,Biologie,H,Famille,Moyenne,10.35,13.8,6.9,10.5,Admis
+43,Biologie,F,Famille,Forte,14.54,8.6,5.4,11.28,Admis
+44,Informatique,H,Famille,Forte,13.48,14.3,6.0,13.11,Admis
+45,Biologie,H,Famille,Moyenne,12.35,8.9,6.8,11.66,Admis
+46,Chimie,F,Cité universitaire,Moyenne,14.68,6.5,7.9,7.31,Ajourné
+47,Chimie,F,Location,Moyenne,10.58,10.2,5.8,10.77,Admis
+48,Biologie,F,Famille,Moyenne,12.28,,5.4,10.0,Admis
+49,Informatique,F,Location,Faible,14.24,6.1,6.8,12.04,Admis
+50,Chimie,H,Famille,Faible,13.53,11.3,7.0,12.46,Admis
+51,Chimie,F,Location,Faible,12.69,10.2,6.4,7.03,Ajourné
+52,Chimie,H,Location,Moyenne,12.78,13.1,8.0,11.04,Admis
+53,Chimie,F,Cité universitaire,Forte,12.67,8.8,5.1,11.0,Admis
+54,Chimie,F,Cité universitaire,Forte,14.21,5.9,6.0,10.55,Admis
+55,Chimie,F,Location,Faible,12.57,15.9,6.8,14.92,Admis
+56,Informatique,H,Famille,Forte,13.95,7.4,5.9,12.04,Admis
+57,Chimie,F,Location,Moyenne,10.08,5.6,7.2,6.56,Ajourné
+58,Chimie,F,Location,Forte,14.72,8.4,6.8,14.58,Admis
+59,Biologie,F,Location,Forte,16.42,6.1,,12.39,Admis
+60,Informatique,F,Location,Moyenne,13.7,7.7,9.2,13.84,Admis
+61,Chimie,H,Cité universitaire,Forte,12.88,4.9,5.8,7.87,Ajourné
+62,Biologie,F,Cité universitaire,Forte,12.25,5.2,6.6,6.32,Ajourné
+63,Chimie,H,Cité universitaire,Faible,13.98,12.1,7.3,13.08,Admis
+64,Biologie,H,Famille,Forte,12.09,9.2,6.1,12.12,Admis
+65,Informatique,H,Location,Forte,11.85,5.5,7.0,12.05,Admis
+66,Informatique,F,Famille,Forte,10.02,,7.7,8.3,Ajourné
+67,Biologie,H,Famille,Faible,13.34,6.9,7.0,8.63,Ajourné
+68,Chimie,F,Location,Moyenne,12.59,7.9,7.6,5.61,Ajourné
+69,Informatique,H,Location,Moyenne,12.67,8.9,6.4,13.41,Admis
+70,Biologie,F,Famille,Faible,13.0,15.2,6.6,15.72,Admis
+71,Chimie,F,Location,Forte,12.01,11.4,8.7,10.19,Admis
+72,Chimie,F,Location,Moyenne,13.26,9.3,7.3,9.88,Ajourné
+73,Informatique,H,Location,Moyenne,11.49,7.5,7.8,10.53,Admis
+74,Informatique,F,Cité universitaire,Moyenne,12.84,4.6,6.2,13.0,Admis
+75,Informatique,H,Famille,Moyenne,12.61,8.0,6.6,13.5,Admis
+76,Chimie,F,Famille,Forte,10.61,6.2,8.0,9.75,Ajourné
+77,Biologie,H,Famille,Forte,11.3,10.3,6.9,11.0,Admis
+78,Informatique,F,Famille,Faible,12.17,8.2,5.6,10.51,Admis
+79,Biologie,F,Famille,Moyenne,12.21,9.2,5.9,12.87,Admis
+80,Biologie,H,Famille,Faible,13.36,19.2,6.8,13.69,Admis
+81,Biologie,F,Famille,Faible,12.43,4.4,8.4,8.9,Ajourné
+82,Informatique,F,Cité universitaire,Moyenne,12.93,5.1,7.4,8.12,Ajourné
+83,Chimie,F,Location,Forte,12.43,16.3,6.1,15.76,Admis
+84,Biologie,F,Cité universitaire,Forte,10.0,6.1,,9.09,Ajourné
+85,Biologie,F,Cité universitaire,Forte,12.83,8.6,6.9,9.65,Ajourné
+86,Chimie,F,Location,Faible,11.82,8.5,5.2,9.36,Ajourné
+87,Chimie,F,Location,Faible,12.78,5.8,6.8,6.02,Ajourné
+88,Chimie,H,Famille,Faible,11.93,2.6,6.5,3.9,Ajourné
+89,Chimie,H,Cité universitaire,Forte,13.92,9.3,6.7,10.67,Admis
+90,Informatique,F,Location,Moyenne,12.94,7.1,5.9,10.19,Admis
+91,Informatique,H,Famille,Faible,13.99,5.5,7.2,12.69,Admis
+92,Biologie,F,Cité universitaire,Forte,14.09,8.7,6.4,15.81,Admis
+93,Informatique,H,Location,Forte,12.21,8.4,6.1,12.17,Admis
+94,Informatique,F,Famille,Moyenne,14.14,7.5,8.7,12.49,Admis
+95,Chimie,H,Location,Moyenne,13.32,9.6,6.5,12.21,Admis
+96,Chimie,H,Location,Faible,11.52,9.9,5.5,8.97,Ajourné
+97,Chimie,F,Location,Moyenne,12.84,6.7,8.1,9.79,Ajourné
+98,Informatique,H,Cité universitaire,Moyenne,13.13,7.4,8.2,8.45,Ajourné
+99,Biologie,H,Location,Faible,14.78,10.1,5.9,11.26,Admis
+100,Chimie,H,Location,Forte,12.51,4.8,6.4,5.27,Ajourné
+101,Informatique,F,Famille,Faible,15.2,6.3,6.7,8.63,Ajourné
+102,Biologie,F,Famille,Faible,14.08,7.0,6.4,12.09,Admis
+103,Chimie,F,Location,Faible,10.04,6.3,5.4,6.12,Ajourné
+104,Chimie,F,Cité universitaire,Faible,11.55,17.2,5.7,16.39,Admis
+105,Informatique,F,Famille,Faible,13.82,,9.0,16.97,Admis
+106,Biologie,H,Famille,Forte,10.96,5.7,6.2,8.39,Ajourné
+107,Chimie,F,Famille,Forte,13.67,5.6,6.3,8.43,Ajourné
+108,Informatique,H,Cité universitaire,Forte,14.94,9.5,7.6,13.02,Admis
+109,Chimie,F,Cité universitaire,Moyenne,12.62,5.9,6.3,4.0,Ajourné
+110,Biologie,H,Famille,Forte,14.97,6.4,6.2,10.33,Admis
+111,Chimie,F,Famille,Forte,14.85,9.9,5.8,11.75,Admis
+112,Biologie,H,Location,Moyenne,12.92,11.3,7.4,11.23,Admis
+113,Chimie,H,Famille,Moyenne,12.95,8.9,7.0,8.49,Ajourné
+114,Biologie,H,Location,Moyenne,13.25,7.1,7.9,10.17,Admis
+115,Biologie,F,Famille,Faible,13.62,9.0,6.4,10.53,Admis
+116,Biologie,F,Cité universitaire,Forte,10.82,4.8,8.1,8.17,Ajourné
+117,Biologie,H,Location,Moyenne,12.8,7.1,7.0,8.28,Ajourné
+118,Chimie,H,Cité universitaire,Moyenne,10.66,4.7,6.3,9.93,Ajourné
+119,Biologie,F,Location,Moyenne,12.52,8.1,7.3,11.41,Admis
+120,Chimie,H,Famille,Moyenne,12.69,8.9,7.2,9.78,Ajourné
+121,Chimie,F,Location,Faible,10.46,5.7,7.1,5.17,Ajourné
+122,Informatique,F,Cité universitaire,Forte,11.23,11.1,6.1,11.29,Admis
+123,Chimie,H,Location,Faible,12.44,11.4,6.7,12.32,Admis
+124,Biologie,H,Location,Moyenne,16.02,5.1,6.6,10.14,Admis
+125,Biologie,F,Location,Faible,11.06,11.7,7.6,11.22,Admis
+126,Biologie,F,Location,Faible,13.17,11.6,8.1,13.09,Admis
+127,Chimie,F,Location,Faible,11.75,6.6,7.7,6.87,Ajourné
+128,Informatique,F,Location,Faible,12.47,12.4,7.6,14.22,Admis
+129,Chimie,H,Cité universitaire,Forte,14.38,9.3,7.9,8.28,Ajourné
+130,Chimie,H,Cité universitaire,Forte,13.43,17.9,8.1,14.05,Admis
+131,Informatique,H,Cité universitaire,Moyenne,13.6,5.2,6.4,7.41,Ajourné
+132,Informatique,F,Cité universitaire,Forte,13.68,10.7,5.7,13.54,Admis
+133,Informatique,F,Cité universitaire,Forte,13.81,,7.0,11.82,Admis
+134,Informatique,H,Famille,Moyenne,10.0,7.3,8.3,13.03,Admis
+135,Biologie,F,Famille,Moyenne,13.54,13.3,5.6,12.48,Admis
+136,Chimie,F,Famille,Forte,12.88,10.3,5.9,11.52,Admis
+137,Informatique,H,Famille,Moyenne,13.56,8.4,6.9,13.35,Admis
+138,Informatique,F,Cité universitaire,Forte,14.17,8.1,6.3,15.63,Admis
+139,Chimie,F,Location,Faible,13.58,6.6,7.8,9.74,Ajourné
+140,Informatique,F,Famille,Faible,13.97,5.3,6.9,12.07,Admis
+141,Chimie,H,Location,Forte,11.36,5.7,7.7,11.03,Admis
+142,Chimie,F,Famille,Moyenne,13.63,4.8,7.1,5.35,Ajourné
+143,Biologie,H,Location,Moyenne,12.85,6.4,7.2,8.63,Ajourné
+144,Chimie,F,Famille,Forte,12.88,12.5,5.7,11.78,Admis
+145,Informatique,F,Cité universitaire,Forte,14.82,9.3,6.2,14.04,Admis
+146,Biologie,F,Cité universitaire,Forte,12.32,9.9,4.9,10.45,Admis
+147,Biologie,H,Location,Faible,12.07,6.1,6.1,10.55,Admis
+148,Chimie,F,Famille,Moyenne,11.16,12.1,6.3,9.77,Ajourné
+149,Biologie,H,Cité universitaire,Forte,12.59,7.1,7.2,9.04,Ajourné
+150,Biologie,H,Location,Moyenne,14.5,7.7,5.7,12.19,Admis
+151,Informatique,H,Cité universitaire,Forte,10.67,5.0,8.6,7.97,Ajourné
+152,Biologie,F,Famille,Forte,13.35,10.7,8.1,10.75,Admis
+153,Chimie,F,Location,Moyenne,10.0,3.3,5.8,2.99,Ajourné
+154,Biologie,H,Famille,Moyenne,12.03,6.1,5.0,8.75,Ajourné
+155,Chimie,F,Famille,Forte,13.61,5.7,5.2,10.96,Admis
+156,Biologie,F,Famille,Forte,12.25,12.0,7.1,14.11,Admis
+157,Informatique,H,Location,Moyenne,11.32,11.2,5.6,13.57,Admis
+158,Chimie,H,Location,Moyenne,12.48,6.6,6.5,8.84,Ajourné
+159,Biologie,F,Location,Moyenne,14.38,11.2,7.4,12.2,Admis
+160,Informatique,F,Location,Faible,15.09,,7.2,12.36,Admis
+161,Chimie,H,Location,Moyenne,15.12,5.5,7.6,7.41,Ajourné
+162,Chimie,H,Location,Moyenne,13.96,8.6,5.5,10.9,Admis
+163,Biologie,H,Cité universitaire,Forte,13.5,7.2,7.5,12.58,Admis
+164,Informatique,F,Cité universitaire,Forte,14.38,6.5,7.5,9.41,Ajourné
+165,Chimie,F,Location,Forte,11.38,4.0,7.8,9.22,Ajourné
+166,Biologie,F,Cité universitaire,Faible,11.64,6.9,7.7,4.91,Ajourné
+167,Informatique,F,Famille,Faible,14.81,7.9,5.6,11.24,Admis
+168,Biologie,H,Location,Forte,14.2,5.0,4.4,8.06,Ajourné
+169,Biologie,F,Famille,Moyenne,14.23,11.1,7.2,11.76,Admis
+170,Chimie,F,Cité universitaire,Forte,13.31,7.4,8.4,9.24,Ajourné
+171,Biologie,F,Location,Moyenne,11.85,15.6,6.1,16.34,Admis
+172,Biologie,H,Location,Faible,11.49,5.0,6.1,5.84,Ajourné
+173,Chimie,F,Cité universitaire,Forte,14.31,9.5,7.0,9.97,Ajourné
+174,Informatique,H,Cité universitaire,Moyenne,14.52,9.8,7.9,12.56,Admis
+175,Informatique,F,Famille,Moyenne,11.43,8.2,7.6,10.17,Admis
+176,Biologie,H,Cité universitaire,Forte,11.96,8.0,5.7,9.14,Ajourné
+177,Informatique,H,Location,Forte,12.86,15.2,6.4,13.79,Admis
+178,Biologie,H,Cité universitaire,Forte,14.22,8.8,6.3,12.54,Admis
+179,Informatique,F,Location,Moyenne,12.52,4.6,7.4,9.59,Ajourné
+180,Biologie,H,Location,Moyenne,11.81,8.2,7.6,11.77,Admis
+181,Informatique,F,Cité universitaire,Forte,14.38,9.9,6.0,16.4,Admis
+182,Informatique,F,Location,Forte,13.84,4.3,6.0,7.97,Ajourné
+183,Informatique,F,Location,Moyenne,12.03,5.7,7.1,12.97,Admis
+184,Informatique,F,Cité universitaire,Forte,12.08,9.4,6.6,13.45,Admis
+185,Biologie,F,Famille,Faible,14.55,6.2,6.1,12.41,Admis
+186,Chimie,H,Location,Forte,11.21,8.6,6.4,9.1,Ajourné
+187,Informatique,F,Location,Moyenne,12.59,5.9,,11.75,Admis
+188,Biologie,F,Location,Faible,13.63,5.5,6.5,10.21,Admis
+189,Chimie,H,Famille,Faible,13.23,12.5,6.7,14.32,Admis
+190,Biologie,F,Cité universitaire,Faible,14.3,12.2,6.1,12.19,Admis
+191,Biologie,H,Famille,Moyenne,10.6,14.6,7.4,11.7,Admis
+192,Chimie,F,Cité universitaire,Forte,13.02,6.2,6.3,8.58,Ajourné
+193,Chimie,H,Cité universitaire,Faible,13.42,13.8,7.1,15.17,Admis
+194,Chimie,H,Famille,Forte,13.47,3.9,7.0,10.79,Admis
+195,Chimie,H,Location,Faible,13.81,12.5,6.5,10.26,Admis
+196,Chimie,H,Location,Faible,11.37,11.4,6.0,11.17,Admis
+197,Informatique,H,Famille,Forte,15.02,4.7,6.8,11.68,Admis
+198,Biologie,F,Location,Moyenne,13.64,8.5,6.5,10.86,Admis
+199,Biologie,F,Famille,Forte,13.78,4.5,7.9,10.45,Admis
+200,Chimie,F,Famille,Forte,12.19,5.7,6.0,11.64,Admis
+201,Informatique,H,Location,Forte,13.25,11.7,7.6,15.6,Admis
+202,Chimie,F,Cité universitaire,Forte,14.86,13.3,8.1,13.27,Admis
+203,Biologie,H,Location,Moyenne,12.98,8.4,7.5,9.72,Ajourné
+204,Informatique,F,Famille,Faible,13.27,8.9,7.6,13.21,Admis
+205,Informatique,F,Famille,Moyenne,13.44,12.8,6.6,15.43,Admis
+206,Informatique,F,Famille,Moyenne,10.71,10.5,7.3,14.1,Admis
+207,Biologie,F,Location,Faible,12.76,4.2,7.3,10.55,Admis
+208,Biologie,F,Location,Moyenne,13.97,11.4,5.3,13.58,Admis
+209,Informatique,F,Location,Faible,12.32,7.1,6.5,11.87,Admis
+210,Informatique,H,Location,Moyenne,12.94,24.9,5.7,20.0,Admis
+211,Biologie,F,Famille,Forte,12.95,6.0,5.0,12.21,Admis
+212,Chimie,F,Location,Moyenne,10.79,7.1,6.9,6.34,Ajourné
+213,Biologie,H,Location,Moyenne,14.13,4.8,7.3,7.03,Ajourné
+214,Chimie,F,Famille,Faible,11.1,6.7,6.2,5.08,Ajourné
+215,Biologie,F,Famille,Moyenne,13.59,8.4,7.4,8.1,Ajourné
+216,Biologie,H,Famille,Faible,12.81,7.6,7.5,10.65,Admis
+217,Biologie,F,Location,Faible,12.52,5.8,7.0,6.53,Ajourné
+218,Informatique,H,Location,Faible,13.09,5.0,6.4,11.32,Admis
+219,Chimie,F,Famille,Moyenne,14.06,5.8,7.6,7.73,Ajourné
+220,Biologie,F,Location,Forte,14.14,6.4,8.7,12.52,Admis
+221,Chimie,H,Famille,Forte,12.4,10.4,4.8,12.2,Admis
+222,Chimie,H,Location,Forte,12.77,9.1,7.6,10.85,Admis
+223,Chimie,H,Famille,Forte,11.8,6.7,5.7,9.47,Ajourné
+224,Chimie,H,Location,Moyenne,10.95,11.2,7.7,7.98,Ajourné
+225,Chimie,F,Famille,Forte,14.33,12.4,7.9,8.86,Ajourné
+226,Biologie,H,Cité universitaire,Forte,11.46,15.1,6.5,12.96,Admis
+227,Chimie,H,Famille,Faible,11.97,9.1,6.5,10.12,Admis
+228,Informatique,H,Cité universitaire,Forte,13.53,10.8,6.9,11.86,Admis
+229,Chimie,F,Location,Moyenne,11.11,10.8,7.0,11.31,Admis
+230,Informatique,H,Famille,Forte,13.67,7.9,6.7,13.77,Admis
+231,Biologie,H,Location,Faible,11.82,6.2,8.0,8.74,Ajourné
+232,Biologie,H,Cité universitaire,Forte,11.41,6.5,5.3,9.63,Ajourné
+233,Informatique,F,Famille,Faible,12.19,10.8,6.4,12.51,Admis
+234,Chimie,H,Famille,Faible,11.81,6.6,7.6,8.09,Ajourné
+235,Chimie,H,Famille,Moyenne,13.33,11.1,6.6,9.33,Ajourné
+236,Chimie,F,Famille,Moyenne,14.99,20.5,6.7,19.68,Admis
+237,Biologie,F,Location,Moyenne,13.94,15.4,6.6,15.86,Admis
+238,Informatique,F,Famille,Moyenne,13.65,12.4,7.9,15.79,Admis
+239,Chimie,H,Cité universitaire,Moyenne,12.14,13.2,7.6,10.7,Admis
+240,Chimie,H,Cité universitaire,Forte,12.66,11.5,5.6,9.07,Ajourné
+241,Informatique,H,Cité universitaire,Forte,13.13,12.0,5.8,16.82,Admis
+242,Informatique,H,Cité universitaire,Moyenne,12.89,10.0,6.5,10.38,Admis
+243,Informatique,H,Famille,Moyenne,13.17,7.2,6.8,11.07,Admis
+244,Chimie,F,Famille,Forte,11.29,6.5,7.8,7.97,Ajourné
+245,Biologie,H,Cité universitaire,Forte,15.44,5.0,6.8,11.19,Admis
+246,Biologie,F,Location,Moyenne,11.08,14.6,8.2,13.67,Admis
+247,Chimie,F,Cité universitaire,Forte,12.74,5.9,8.8,8.68,Ajourné
+248,Biologie,F,Famille,Forte,14.1,9.6,6.0,9.88,Ajourné
+249,Biologie,F,Location,Moyenne,11.9,12.8,7.1,12.09,Admis
+250,Biologie,H,Famille,Forte,14.41,14.0,7.9,14.91,Admis
+251,Informatique,H,Cité universitaire,Moyenne,10.96,8.4,7.1,11.97,Admis
+252,Biologie,F,Location,Forte,11.9,7.9,7.2,10.64,Admis
+253,Biologie,F,Famille,Moyenne,10.0,8.0,6.4,10.85,Admis
+254,Informatique,H,Famille,Moyenne,14.38,8.9,6.4,14.84,Admis
+255,Chimie,H,Famille,Moyenne,11.26,8.6,7.1,6.69,Ajourné
+256,Informatique,H,Cité universitaire,Moyenne,11.96,8.9,7.9,12.0,Admis
+257,Chimie,H,Location,Forte,14.0,9.8,5.9,12.41,Admis
+258,Informatique,F,Location,Moyenne,13.4,8.9,6.8,11.83,Admis
+259,Informatique,F,Famille,Forte,14.41,9.7,8.7,16.83,Admis
+260,Chimie,F,Famille,Moyenne,13.82,3.9,6.7,6.95,Ajourné
+261,Informatique,H,Cité universitaire,Forte,14.16,16.0,7.1,15.1,Admis
+262,Chimie,F,Cité universitaire,Moyenne,12.24,10.8,7.7,7.59,Ajourné
+263,Chimie,F,Famille,Faible,12.8,11.0,7.5,10.0,Admis
+264,Informatique,H,Cité universitaire,Forte,13.95,9.1,6.8,12.67,Admis
+265,Chimie,F,Location,Forte,13.97,6.1,6.7,8.89,Ajourné
+266,Biologie,F,Famille,Moyenne,14.24,7.3,8.4,6.99,Ajourné
+267,Chimie,H,Location,Moyenne,11.84,7.4,6.0,8.72,Ajourné
+268,Biologie,H,Famille,Forte,11.38,,5.6,14.68,Admis
+269,Informatique,H,Famille,Moyenne,11.16,10.1,8.0,10.92,Admis
+270,Chimie,H,Cité universitaire,Forte,12.25,6.6,8.2,9.92,Ajourné
+271,Biologie,H,Location,Forte,12.77,5.8,6.0,8.5,Ajourné
+272,Informatique,H,Cité universitaire,Forte,11.24,18.2,7.8,15.44,Admis
+273,Informatique,H,Cité universitaire,Moyenne,12.65,14.9,7.3,18.06,Admis
+274,Informatique,H,Famille,Forte,13.8,6.9,6.8,13.56,Admis
+275,Chimie,F,Cité universitaire,Forte,14.3,6.7,7.0,11.74,Admis
+276,Chimie,F,Cité universitaire,Moyenne,12.09,3.8,8.8,11.12,Admis
+277,Biologie,F,Famille,Moyenne,13.71,13.9,7.7,14.35,Admis
+278,Biologie,F,Location,Moyenne,11.12,10.2,7.5,10.74,Admis
+279,Biologie,F,Famille,Moyenne,11.99,16.4,7.5,14.96,Admis
+280,Chimie,H,Cité universitaire,Moyenne,13.06,8.7,6.3,12.8,Admis
+281,Informatique,H,Cité universitaire,Forte,12.01,2.6,6.6,10.56,Admis
+282,Biologie,F,Cité universitaire,Forte,11.82,10.1,6.8,9.86,Ajourné
+283,Biologie,F,Location,Moyenne,13.29,2.7,6.1,6.48,Ajourné
+284,Informatique,H,Location,Moyenne,11.52,17.0,7.5,16.84,Admis
+285,Informatique,F,Famille,Moyenne,13.07,11.3,8.1,14.87,Admis
+286,Informatique,H,Famille,Moyenne,12.76,9.0,6.8,13.35,Admis
+287,Informatique,F,Famille,Moyenne,13.62,13.7,6.1,16.6,Admis
+288,Informatique,H,Famille,Faible,13.97,13.7,6.2,15.07,Admis
+289,Chimie,F,Location,Moyenne,13.1,9.2,8.5,11.63,Admis
+290,Informatique,F,Cité universitaire,Forte,12.21,6.6,6.4,12.34,Admis
+291,Chimie,F,Cité universitaire,Moyenne,14.32,4.9,5.7,7.28,Ajourné
+292,Chimie,H,Cité universitaire,Forte,13.18,8.3,5.5,8.13,Ajourné
+293,Informatique,H,Famille,Forte,11.68,6.3,6.5,11.12,Admis
+294,Chimie,F,Location,Moyenne,13.15,7.4,8.2,8.82,Ajourné
+295,Informatique,F,Location,Faible,12.05,13.2,8.2,11.4,Admis
+296,Chimie,F,Location,Forte,10.0,6.7,7.5,9.0,Ajourné
+297,Biologie,H,Location,Faible,11.56,6.8,6.2,9.54,Ajourné
+298,Biologie,F,Cité universitaire,Moyenne,12.38,5.7,7.8,11.57,Admis
+299,Chimie,H,Cité universitaire,Moyenne,12.27,14.3,6.8,12.73,Admis
+300,Informatique,F,Location,Moyenne,10.75,5.5,7.6,9.51,Ajourné

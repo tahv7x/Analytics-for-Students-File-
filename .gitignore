@@ -1,0 +1,17 @@
+# Python virtual environment
+.venv/
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+
+# Jupyter/IPython
+.ipynb_checkpoints/
+
+# IDE and OS metadata
+.vscode/
+.DS_Store
+Thumbs.db
+
+
+interpretations.md
