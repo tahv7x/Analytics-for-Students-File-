@@ -22,7 +22,6 @@ sns.boxplot(x=df['heures_etude'])
 plt.title('Distribution des heures d\'étude')
 plt.xlabel('Heures d\'étude par semaine')
 plt.show()
-
 #Calcule Avec la methode tukey
 Q1 = df["heures_etude"].quantile(0.25)
 Q3 = df["heures_etude"].quantile(0.75)
@@ -45,7 +44,7 @@ print(aberrantes[['id','heures_etude']])
 df.loc[df['heures_etude'] == 95, 'heures_etude'] = np.nan
 
 print('Valeurs manquantes après traitement :', df['heures_etude'].isnull().sum())
-
+print()
 #TODO 0.3
 print('Lignes avec valeurs manquantes : ', df.isnull().any(axis=1).sum())
 print(df[df.isnull().any(axis=1)][
@@ -60,4 +59,39 @@ d = df.dropna(subset=variables).copy()
 print('Dimension de tableau d\'analyse d : ', d.shape)
 print('Valeurs manquantes dans les variables utilisées :\n', d[variables].isnull().sum())
 print('Nombre d\'observations supprimées :', len(df)-len(d))
+
+#TODO 1.1
+print('Analyse Descriptive')
+variables_quanti = [
+    'moyenne_bac','heures_etude','note_stat'
+]
+stat_desc = d[variables_quanti].agg(['mean','std','min','max'])
+print(stat_desc.round(2))
+#TODO 1.2
+print('Moyenne de note stat  par filière :\n', d.groupby('filiere')['note_stat'].mean().round(2))
+variables_quali = [
+    'filiere','sexe','logement',
+    'assiduite','reussite'
+]
+
+for v in variables_quali: 
+    print(f"Effectifs de {v} :")
+    print(d[v].value_counts())
+
+#TODO 1.3
+plt.figure(figsize=(8,5))
+sns.histplot(data=d,x='note_stat',bins=15,color='steelblue',edgecolor='white')
+plt.title('Distribution des notes en statistiques')
+plt.xlabel('Note en statistique (/20)')
+plt.ylabel('Nombre d\'étudiants')
+plt.tight_layout()
+plt.show()
+#boite a moustaches 
+plt.figure(figsize=(8,5))
+sns.boxplot(data=d,x='filiere',y='note_stat',order=['Biologie','Chimie','Informatique'])
+plt.title('Distribution des notes par filière')
+plt.xlabel('Filière')
+plt.ylabel('Note en statistique (/20)')
+plt.tight_layout()
+plt.show()
 
