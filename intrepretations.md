@@ -53,3 +53,53 @@ Enfin, 187 étudiants sont admis contre 106 ajournés, soit un taux de réussite
 L'histogramme montre que les notes en statistique sont principalement concentrées entre 8 et 14/20, avec un maximum de fréquence autour de 11 à 12/20.
 
 La distribution présente une forme approximativement en cloche, avec peu de notes très faibles ou très élevées. Cette répartition est cohérente avec la moyenne de 11,08/20 observée précédemment.
+
+## Partie 2 - Régression linéaire
+
+### TODO 2.1 — Nuage de points
+
+Le nuage de points montre une tendance croissante entre les heures d'étude hebdomadaires et la note en statistique. Les étudiants qui consacrent davantage de temps à l'étude ont généralement tendance à obtenir de meilleures notes.
+
+La relation semble approximativement linéaire, malgré une certaine dispersion des points. Une régression linéaire simple paraît donc envisageable, sous réserve de vérifier les conditions du modèle.
+
+### TODO 2.2 — Corrélation linéaire
+
+Le coefficient de corrélation de Pearson est de **r = 0,6773**, ce qui indique une corrélation linéaire positive assez forte entre les heures d'étude et la note en statistique.
+
+La p-value obtenue (environ \(1,11 \times 10^{-40}\)) est inférieure au seuil de signification de 5 %.
+
+Nous rejetons donc l'hypothèse nulle \(H_0\). La corrélation observée est statistiquement significative : les étudiants qui étudient davantage ont généralement tendance à obtenir de meilleures notes, sans que cela démontre une relation de cause à effet.
+
+### TODO 2.3 — Droite de régression linéaire
+
+La droite de régression estimée est :
+
+**Note_stat = 0,5442 × heures_etude + 6,2049**
+
+La pente positive de 0,5442 indique qu'une heure d'étude hebdomadaire supplémentaire est associée à une augmentation moyenne prédite de 0,5442 point de la note en statistique.
+
+L'ordonnée à l'origine, égale à 6,2049, représente la note prédite pour zéro heure d'étude. Cette valeur doit être interprétée avec prudence, car elle se situe en dehors des heures d'étude observées.
+
+### TODO 2.4 — Qualité du modèle et significativité de la pente
+
+Le coefficient de détermination est de **R² = 0,4588**, ce qui signifie que le modèle linéaire basé sur les heures d'étude explique environ 45,88 % de la variabilité des notes en statistique.
+
+Le test de significativité de la pente donne une statistique t = 15,7056 et une p-value d'environ 1,11 × 10⁻⁴⁰, inférieure au seuil de 5 %. Nous rejetons donc l'hypothèse nulle H₀ : a = 0.
+
+L'intervalle de confiance à 95 % de la pente est [0,4760 ; 0,6124]. Il ne contient pas zéro, ce qui confirme que la pente est statistiquement significative et positive.
+
+Ces résultats indiquent une association linéaire positive entre le temps d'étude et les notes, sans démontrer une relation de causalité.
+
+### TODO 2.5 — Vérification manuelle des coefficients
+
+Les calculs effectués à partir des formules du cours donnent une pente de 0,5442 et une ordonnée à l'origine de 6,2049.
+
+Ces résultats sont identiques, à la précision numérique près, à ceux obtenus avec la fonction `stats.linregress()`. Cette comparaison confirme la cohérence de l'estimation de notre droite de régression.
+
+### TODO 2.6 — Prédictions
+
+Pour un étudiant consacrant 10 heures par semaine à ses études, la régression linéaire prédit une note d'environ **11,65/20**.
+
+En revanche, pour 40 heures d'étude, le modèle prédit environ 27,97/20. Cette valeur n'est pas réaliste, car la note maximale est de 20/20 et 40 heures se situe en dehors de l'intervalle observé [2,5 ; 24,9].
+
+Il s'agit donc d'une extrapolation, dont le résultat ne peut pas être considéré comme fiable.
