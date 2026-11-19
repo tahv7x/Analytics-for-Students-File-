@@ -103,3 +103,43 @@ Pour un étudiant consacrant 10 heures par semaine à ses études, la régressio
 En revanche, pour 40 heures d'étude, le modèle prédit environ 27,97/20. Cette valeur n'est pas réaliste, car la note maximale est de 20/20 et 40 heures se situe en dehors de l'intervalle observé [2,5 ; 24,9].
 
 Il s'agit donc d'une extrapolation, dont le résultat ne peut pas être considéré comme fiable.
+
+### TODO 3.2 — Vérification des conditions de l'ANOVA
+
+Les tests de Shapiro-Wilk donnent des p-values de 0,8997 pour la Biologie, 0,1175 pour la Chimie et 0,4666 pour l'Informatique. Toutes ces valeurs sont supérieures au seuil de 5 %. L'hypothèse de normalité n'est donc rejetée dans aucun des trois groupes.
+
+Le test de Levene donne une statistique de 0,4372 et une p-value de 0,6463. Nous ne rejetons pas l'hypothèse d'égalité des variances.
+
+En supposant l'indépendance des observations, les conditions vérifiées ne révèlent pas d'obstacle majeur à l'application de l'ANOVA classique.
+
+### TODO 3.3 — Calcul manuel de l'ANOVA
+
+L'analyse de la variance donne une somme des carrés entre les groupes de 402,7140 et une somme des carrés intra-groupes de 1 978,2839.
+
+Les carrés moyens correspondants sont respectivement de 201,3570 et 6,8217, ce qui donne une statistique F de 29,5173.
+
+Le calcul manuel et la fonction `stats.f_oneway()` donnent le même résultat, ce qui confirme la cohérence des calculs.
+
+Cette statistique suggère des différences entre les moyennes des filières, dont la significativité est évaluée au seuil de 5 %.
+
+### TODO 3.4 — Décision statistique
+
+La statistique F calculée (29,5173) est supérieure à la valeur critique (3,0269). De plus, la p-value est inférieure au seuil de 5 %.
+
+Nous rejetons donc l'hypothèse nulle d'égalité des moyennes. Il existe une différence statistiquement significative entre les notes moyennes d'au moins deux filières.
+
+### TODO 3.5 — Taille d'effet
+
+La taille d'effet η² est d'environ 0,1691, soit 16,91 %. Cela signifie que les différences entre les filières représentent environ 16,91 % de la variabilité totale des notes dans l'échantillon.
+
+Ce résultat mesure l'importance de l'association, sans établir une relation de causalité.
+
+### TODO 3.6 — Comparaisons par paires (Tukey)
+
+Le test de Tukey révèle des différences statistiquement significatives entre les trois filières prises deux à deux.
+
+Les étudiants en Biologie obtiennent une moyenne supérieure à ceux en Chimie de 1,0541 point (p = 0,0119).
+
+Les étudiants en Informatique présentent une moyenne supérieure à ceux en Biologie de 1,7956 point (p < 0,001) et à ceux en Chimie de 2,8496 points (p < 0,001).
+
+Ainsi, les étudiants en Informatique obtiennent les meilleures notes moyennes, suivis de ceux en Biologie, puis en Chimie. Ces différences sont statistiquement significatives, mais ne démontrent pas que la filière est directement responsable des résultats.

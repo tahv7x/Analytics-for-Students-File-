@@ -217,7 +217,7 @@ plt.title('Résidus en fonction des valeurs ajustées')
 plt.xlabel('Notes prédites (/20)')
 plt.ylabel('Résidus')
 plt.tight_layout()
-plt.show()
+#plt.show()
 
 plt.figure(figsize=(8,5))
 stats.probplot(residus, dist="norm", plot=plt)
@@ -225,7 +225,7 @@ plt.title("QQ-plot des résidus")
 plt.xlabel("Quantiles théoriques")
 plt.ylabel("Quantiles observés")
 plt.tight_layout()
-plt.show()
+#plt.show()
 
 W,p_shapiro = stats.shapiro(residus)
 print("Statistique W :", round(W, 4))
@@ -239,9 +239,10 @@ else:
 #TODO 3.1
 
 bio = d[d['filiere'] == 'Biologie']['note_stat']
-chimie = d[d['filiere'] == 'chimie']['note_stat']
+chimie = d[d['filiere'] == 'Chimie']['note_stat']
 info = d[d['filiere'] == 'Informatique']['note_stat']
 #on a deja fait le boxplot dans le TODO 1.3
+#TODO 3.2
 
 for nom,groupe in [
     ('Biologie',bio),
@@ -249,3 +250,124 @@ for nom,groupe in [
     ('Informatique',info)
 ]:
     W,p = stats.shapiro(groupe)
+    print(f'{nom} : ')
+    print('W = ',round(W,4))
+    print('p = ',round(p,4))
+
+    if p < ALPHA : 
+        print('Normalite rejetee')
+    else : 
+        print('Normalite non rejetee')
+
+stat_levene, p_levene = stats.levene(bio,chimie,info,center='median')
+print('Test de Levene')
+print('Statistique : ',round(stat_levene,4))
+print('P value : ',round(p_levene,4))
+
+if p_levene < ALPHA : 
+    print('On rejette H0 : variances differentes')
+else : 
+    print('On ne rejette pas H0 : égalité des variances non rejette ')
+
+#TODO 3.3
+
+groupes = [bio,chimie,info]
+
+k = len(groupes)
+n = len(d)
+
+moyenne_generale = d['note_stat'].mean()
+SC_entre = sum(
+    len(g) * (g.mean()-moyenne_generale)**2
+    for g in groupes
+)
+SC_intra = sum(
+    ((g-g.mean())**2).sum()
+    for g in groupes
+)
+
+ddl_entre = k-1
+ddl_intra = n-k
+
+CM_entre = SC_entre / ddl_entre
+CM_intra = SC_intra / ddl_intra
+
+F_manuel = CM_entre / CM_intra 
+
+print("Moyenne générale :", round(moyenne_generale, 4))
+print("SC entre :", round(SC_entre, 4))
+print("SC intra :", round(SC_intra, 4))
+print("ddl entre :", ddl_entre)
+print("ddl intra :", ddl_intra)
+print("CM entre :", round(CM_entre, 4))
+print("CM intra :", round(CM_intra, 4))
+print("F manuel :", round(F_manuel, 4))
+
+f_scipy,p_anova= stats.f_oneway(bio,chimie,info)
+
+print('F avec F_oneway : ',round(f_scipy,4))
+print(f'P value : {p_anova:.4e}')
+print('Resultats identiques : ',np.isclose(F_manuel,f_scipy))
+
+#TODO 3.4
+F_critique = stats.f.ppf(1-ALPHA,ddl_entre,ddl_intra)
+
+print('F calcule : ',round(F_manuel,4))
+print('F critique : ',round(F_critique,4))
+print(f'P value : {p_anova:.4e}')
+
+if F_manuel > F_critique : 
+    print('F > F critique : on rejette H0')
+else : 
+    print('F <= F critique : on ne rejtte pas H0 ')
+if p_anova < ALPHA : 
+    print('p < 0.05 : difference significative')
+else : 
+    print('p => 0.05 : doifference non significative')
+
+#TODO 3.5
+
+SC_totale = SC_entre + SC_intra
+eta2 = SC_entre / SC_totale
+
+print('SC totale : ',round(SC_totale,4))
+print('Eta² : ',round(eta2,4))
+print('Eta² en pourcentage : ',round(eta2*100,2),"%")
+
+#TODO 3.6
+
+tukey = stats.tukey_hsd(bio,chimie,info)
+noms = ['Biologie','Chimie','Informatique']
+
+IC_tukey = tukey.confidence_interval(confidence_level = 1 - ALPHA)
+for i in range(3):
+    for j in range(i+1,3):
+        difference = tukey.statistic[i,j]
+        p = tukey.pvalue[i,j]
+        print(f"{noms[i]} vs {noms[j]}")
+        print("Différence de moyennes :", round(difference, 4))
+        print("P-value :", f"{p:.4e}")     
+
+        print('IC a 95% : ',round(IC_tukey.low[i,j],4),
+              ";",
+              round(IC_tukey.high[i,j],4)
+        )
+        if p < ALPHA : 
+            print('Différence significative : rejet de H0')
+        else : 
+            print('Différence non significative : H0 non rejetée')
+
+# TODO 3.7
+
+H,p_kruskal = stats.kruskal(bio,chimie,info)
+
+print('Statistique H : ',round(H,4))
+print(f'P value : {p_kruskal:.4e}')
+if p_kruskal < ALPHA:
+    print("On rejette H0 : différence significative")
+else:
+    print("On ne rejette pas H0 : différence non significative")
+if (p_kruskal < ALPHA) == (p_anova < ALPHA):
+    print("Conclusion identique à l'ANOVA au seuil de 5 %")
+else:
+    print("Conclusion différente de l'ANOVA au seuil de 5 %")
