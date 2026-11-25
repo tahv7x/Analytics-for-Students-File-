@@ -3,12 +3,26 @@ import numpy as np
 import matplotlib.pyplot as plt 
 import seaborn as sns
 from scipy import stats
+from sklearn.linear_model import LinearRegression
 from pathlib import Path
+
+
 
 sns.set_theme(style="whitegrid")
 ALPHA = 0.05
+#Dossier pour sauvgarder notre graphes
+FIG_DIR = Path(__file__).parent/"Figures"
+FIG_DIR.mkdir(exist_ok=True)
+#Fonction pour enregistre graphes
+def sauvegarder_graph(nom):
+    plt.tight_layout()
+    plt.savefig(
+        FIG_DIR / nom,
+        dpi = 300,
+        bbox_inches = 'tight'
+    )
+    plt.close()
 df = pd.read_csv(Path(__file__).parent/"files"/"donnees_projet.csv")
-
 #TODO 0.1
 
 print("Dimensions : ",df.shape)
@@ -21,7 +35,8 @@ plt.figure(figsize=(8,4))
 sns.boxplot(x=df['heures_etude'])
 plt.title('Distribution des heures d\'étude')
 plt.xlabel('Heures d\'étude par semaine')
-#plt.show()
+plt.show()
+sauvegarder_graph("01_boxplot_heures.png")
 #Calcule Avec la methode tukey
 Q1 = df["heures_etude"].quantile(0.25)
 Q3 = df["heures_etude"].quantile(0.75)
@@ -40,7 +55,7 @@ aberrantes = df[
 print('Nombre d\'aberrations :', len(aberrantes))
 print(aberrantes[['id','heures_etude']])
 
-#don kefma shefna hna on va change 95 par un valeur manquante aussi 
+#donc kefma shefna hna on va change 95 par un valeur manquante aussi 
 df.loc[df['heures_etude'] == 95, 'heures_etude'] = np.nan
 
 print('Valeurs manquantes après traitement :', df['heures_etude'].isnull().sum())
@@ -86,6 +101,7 @@ plt.xlabel('Note en statistique (/20)')
 plt.ylabel('Nombre d\'étudiants')
 plt.tight_layout()
 #plt.show()
+sauvegarder_graph("02_histogramme_notes.png")
 #boite a moustaches 
 plt.figure(figsize=(8,5))
 sns.boxplot(data=d,x='filiere',y='note_stat',order=['Biologie','Chimie','Informatique'])
@@ -94,6 +110,7 @@ plt.xlabel('Filière')
 plt.ylabel('Note en statistique (/20)')
 plt.tight_layout()
 #plt.show()
+sauvegarder_graph("03_boxplot_filieres.png")
 
 #TODO 2.1
 plt.figure(figsize=(8,5))
@@ -103,6 +120,7 @@ plt.xlabel('Heures d\'étude par semaine')
 plt.ylabel('Note en statistique (/20)')
 plt.tight_layout()
 #plt.show()
+sauvegarder_graph("04_nuage_points.png")
 
 #TODO 2.2
 x = d['heures_etude']
@@ -138,6 +156,7 @@ plt.xlabel('Heures d\'étude par semaine')
 plt.ylabel('Note en statistique (/20)')
 plt.tight_layout()
 #plt.show()
+sauvegarder_graph("05_regression.png")
 
 #TODO 2.4
 n =  len(d)
@@ -218,6 +237,7 @@ plt.xlabel('Notes prédites (/20)')
 plt.ylabel('Résidus')
 plt.tight_layout()
 #plt.show()
+sauvegarder_graph("06_residus.png")
 
 plt.figure(figsize=(8,5))
 stats.probplot(residus, dist="norm", plot=plt)
@@ -226,6 +246,7 @@ plt.xlabel("Quantiles théoriques")
 plt.ylabel("Quantiles observés")
 plt.tight_layout()
 #plt.show()
+sauvegarder_graph("07_qqplot.png")
 
 W,p_shapiro = stats.shapiro(residus)
 print("Statistique W :", round(W, 4))
@@ -236,8 +257,34 @@ if p_shapiro < ALPHA:
 else:
     print("On ne rejette pas H0 : normalité non rejetée")
 
+#BONUS 2.8
+
+x_multiple = d[['heures_etude','moyenne_bac']]
+y_multiple = d['note_stat']
+modele_multiple = LinearRegression()
+modele_multiple.fit(x_multiple,y_multiple)
+b0 = modele_multiple.intercept_
+b1 = modele_multiple.coef_[0]
+b2 = modele_multiple.coef_[1]
+print('Constante B0 : ',round(b0,4))
+print('Coefficient heures_etude : ',round(b1,4))
+print('Coefficient moyenne_bac : ',round(b2,4))
+
+print(f'Equation : note_stat = {b0:.4f}'
+      f' + {b1:.4f} * heures_etude'
+      f' + {b2:.4f} * moyenne_bac'
+)
+
+R2_multiple = modele_multiple.score(x_multiple,y_multiple)
+print('R² regression simple : ',round(R2,4))
+print('R² regression multiple :',round(R2_multiple,4))
+
+print('Gain de R² : ',round(R2_multiple - R2,4))
 #TODO 3.1
 
+# H0 : Les moyennes des trois filieres sont egales
+# H1 : Au moins une moyenne est differente
+# Seuil de signification : alpha = 0.05e
 bio = d[d['filiere'] == 'Biologie']['note_stat']
 chimie = d[d['filiere'] == 'Chimie']['note_stat']
 info = d[d['filiere'] == 'Informatique']['note_stat']
@@ -371,3 +418,198 @@ if (p_kruskal < ALPHA) == (p_anova < ALPHA):
     print("Conclusion identique à l'ANOVA au seuil de 5 %")
 else:
     print("Conclusion différente de l'ANOVA au seuil de 5 %")
+
+
+#ETUDE 1 : LOGEMENT x ASSIDUITE
+# #TODO 4.1
+
+# H0 : logement et assiduite sont independants
+# H1 : logement et assiduite sont associes
+observe = pd.crosstab(d['logement'],d['assiduite'])
+print('Effectifs observees : ',observe)
+
+#TODO 4.2
+
+total_lignes = observe.sum(axis=1)
+total_colonnees = observe.sum(axis=0)
+n_total = observe.to_numpy().sum()
+
+effectifs_theo = np.outer(
+    total_lignes,
+    total_colonnees
+)/n_total
+
+theorique = pd.DataFrame(
+    effectifs_theo,
+    index=observe.index,
+    columns=observe.columns
+)
+
+print('Effectifs théoriques : ',theorique.round(2))
+
+#TODO 4.3
+
+contributions = (observe - theorique)**2/theorique
+print('Contributions de chaque cellule : ')
+print(contributions.round(4))
+
+khi2_manuel = contributions.to_numpy().sum()
+print('khi-2 calcule manuellement : ',round(khi2_manuel,4))
+
+#TODO 4.4
+L,C = observe.shape
+ddl_khi2 = (L-1)*(C-1)
+
+khi2_critique = stats.chi2.ppf(
+    1-ALPHA,df=ddl_khi2
+)
+p_manuel = stats.chi2.sf(
+    khi2_manuel,df=ddl_khi2
+)
+print('Degres de liberte : ',ddl_khi2)
+print('khi-2 critique : ',round(khi2_critique,4))
+print(f'P-value manuelle : {p_manuel:.4e}')
+
+khi2_scipy,p_scipy,ddl_scipy,E_scipy = (
+    stats.chi2_contingency(observe)
+)
+print('khi-2 avec scipy : ',round(khi2_scipy,4))
+print(f'P-value scipy : {p_scipy:.4e}')
+print('ddl scipy : ',ddl_scipy)
+
+print('Résultats identiques : ',np.isclose(khi2_manuel,khi2_scipy))
+
+#TODO 4.5
+
+print('Effectif théorique minimum : ',round(theorique.to_numpy().min(),4))
+condition = (theorique.to_numpy() >= 5).all()
+print('tous les effectifs théoriques >= 5 : ',condition)
+if condition : 
+    if khi2_manuel > khi2_critique : 
+        print('khi2 > khi_2 critique : rejet H0')
+    else :
+        print('khi2 < khi2_critique : on ne rejet pas H0') 
+    if p_scipy < ALPHA :
+        print('Association statistiquement significative')
+    else:
+        print('Association non significative')
+else : 
+    print('Condition E<=5 non respectee')
+
+#TODO 4.6
+
+V_cramer = np.sqrt(khi2_manuel/(n_total*min(L-1,C-1)))
+print('V de cramer : ',round(V_cramer,4))
+# Graphique en barres empilées en pourcentages
+pourcentages = observe.div(
+    observe.sum(axis=1),axis=0
+)*100
+
+print('Pourcentages par longement : ')
+print(pourcentages.round(2))
+
+pourcentages.plot(
+    kind='bar',
+    stacked = True,
+    figsize=(9,5)
+)
+plt.title("Répartition de l'assiduité selon le logement")
+plt.xlabel('Type de logement')
+plt.ylabel('Pourcentage des etudaints (%)')
+plt.legend(title='Assiduite')
+plt.xticks(rotation=0)
+plt.ylim(0,100)
+plt.tight_layout()
+#plt.show()
+sauvegarder_graph("08_khi2_logement.png")
+
+# ETUDE 2 : SEXE × FILIERE
+#TODO 4.1
+# H0 : Le sexe et la filiere sont independants
+# H1 : Le sexe et la filiere sont associes
+# Seuil de signification : alpha = 0.05
+
+observe2 = pd.crosstab(d['sexe'],d['filiere'])
+print('Effectifs observes : ')
+print(observe2)
+
+#TODO 4.2
+total_lignes2 = observe2.sum(axis=1)
+total_colonnes2 = observe2.sum(axis=0)
+n_total2 = observe2.to_numpy().sum()
+effectifs_theoriques2 = np.outer(
+    total_lignes2,
+    total_colonnes2
+)/n_total2
+theorique2 = pd.DataFrame(
+    effectifs_theoriques2,
+    index=observe2.index,
+    columns=observe2.columns
+)
+print('Effectifs theoriques : ',theorique2.round(4))
+
+#TODO 4.3
+
+contributions2 = (observe2 - theorique2)**2/theorique2
+print('Contributions de chaque cellule : ',contributions2.round(4))
+khi2_manuel2 = contributions2.to_numpy().sum()
+print('Khi2 cellule manuellement : ',round(khi2_manuel2,4))
+
+#TODO 4.4
+
+L2,C2 = observe2.shape
+ddl_khi2_2 = (L2 - 1) * (C2 - 1)
+khi2_critique2 = stats.chi2.ppf(
+    1-ALPHA,df=ddl_khi2_2
+)
+p_manuel2 = stats.chi2.sf(khi2_manuel2,df=ddl_khi2_2)
+print('Degres de liberte : ',ddl_khi2_2)
+print('khi-2 critique : ', round(khi2_critique2,4))
+print(f'P value : {p_manuel2:.4e}')
+
+khi2_scipy2, p_scipy2, ddl_scipy2, E_scipy2 = (
+    stats.chi2_contingency(observe2)
+)
+print('khi-2 avec scipy : ',round(khi2_scipy2,4))
+print(f'P-Value Scipy : {p_scipy2:.4e}')
+print('ddl Scipy : ',ddl_scipy2)
+
+print('Resultats Identiques : ',np.isclose(khi2_manuel2,khi2_scipy2))
+print('Effectifs theoriques identiques : ',np.allclose(effectifs_theoriques2,E_scipy2))
+
+print('Effetif theoriques minimum : ',round(theorique2.to_numpy().min(),4))
+condition2 = (theorique2.to_numpy() >= 5).all()
+print('Tous les effectifs theoriques >= 5 : ',condition2)
+
+if condition2 : 
+    if khi2_manuel2 > khi2_critique2 : 
+        print('khi-2 > khi-2 critique : rejet H0')
+    else : 
+        print('Khi-2 <= khi-2 critique : H0 non rejete ')
+    if p_scipy2 < ALPHA : 
+        print("Association statistiquement significative")
+    else :
+        print('Association non significative')
+else : 
+    print("Condition E >= 5 non respectee")
+    print("La validite du test doit etre examinee")
+
+V_cramer2 = np.sqrt(khi2_manuel2/(n_total2 * min(L2-1,C2-1)))
+print('V de cramer : ',round(V_cramer2, 4))
+pourcentages2 = observe2.div(observe2.sum(axis=1),axis=0)*100
+print('Pourcentages par sexe : ',pourcentages2.round(2))
+
+pourcentages2.plot(
+    kind='bar',
+    stacked=True,
+    figsize=(9, 5)
+)
+plt.title('Répartition des filières selon le sexe')
+plt.xlabel('Sexe')
+plt.ylabel('Pourcentage des étudiants (%)')
+plt.legend(title='Filière')
+plt.xticks(rotation=0)
+plt.ylim(0,100)
+plt.tight_layout()
+#plt.show()
+sauvegarder_graph("09_khi2_sexe.png")
