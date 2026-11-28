@@ -4,14 +4,8 @@
 # Bibliothèques : pandas, numpy, scipy, matplotlib, seaborn (statsmodels autorisé en option).
 # Complétez les zones "# TODO". Commentez vos choix et interprétez TOUS vos résultats par écrit.
 # %%
-import numpy as np, pandas as pd
-import matplotlib.pyplot as plt, seaborn as sns
-from scipy import stats
-sns.set_theme(style="whitegrid")
-ALPHA = 0.05
 
 # %% PARTIE 0 : chargement et nettoyage (2 pts)
-df = pd.read_csv("donnees_projet.csv")
 # TODO 0.1 : dimensions, types, valeurs manquantes par variable
 # TODO 0.2 : repérer une valeur aberrante dans heures_etude (describe, boxplot). Que faites-vous ? Justifiez.
 # TODO 0.3 : construire le tableau d'analyse "d" sans valeurs manquantes sur les variables utilisées
